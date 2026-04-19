@@ -4,7 +4,7 @@
 
 This project analyzes open-source collaboration patterns on GitHub using graph-based methods and machine learning to identify repositories that are at risk of structural decline.
 
-## 📌 Overview
+## Overview
 
 Open-source projects often depend on a small number of contributors. If these contributors reduce their activity, the project may become inactive or fail.
 
@@ -133,29 +133,34 @@ Each repository is assigned:
 
 ---
 
-## Project Structure
 
+## Key Contributions
 
-src/
-├── data_loading.py # Load GH Archive data
-├── preprocessing.py # Clean + split data
-├── graph_building.py # Construct graphs
-├── feature_engineering.py # Extract features
-├── labeling.py # Define risk labels
-├── modeling.py # Train models
-├── evaluation.py # Metrics + plots
-├── risk_score.py # Interpretable scoring
-├── utils.py # Helpers
-└── run_preprocessing.py # Pipeline entry point
+- Graph-based modeling of open-source collaboration
+- Combination of **ML prediction + interpretable scoring**
+- Explicit handling of **temporal leakage**
+- Structural risk defined using real future outcomes
 
-data/
-└── processed/ # Processed datasets
+---
 
-outputs/
-├── features.csv
-├── labels.csv
-├── cv_results.csv
-├── loo_predictions.csv
-├── feature_importance.csv
-├── evaluation_report.txt
-└── plots/
+## Limitations
+
+- Small dataset (~20 repositories)
+- Labels are proxy-based (inactivity ≠ always failure)
+- Results are relative to sampled repositories
+
+---
+
+## Future Work
+
+- Apply to larger datasets
+- Use graph embeddings (node2vec / GNN)
+- Predict contributor churn
+- Improve label definition with external signals
+
+---
+
+## Authors
+
+- Sammi Mi  
+- Steven Liu  
